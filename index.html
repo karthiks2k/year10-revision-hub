@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Year 10 Revision Hub</title>
+<meta name="description" content="AQA Year 10 GCSE revision hub for UK students.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">10</div><div><strong>Revision Hub</strong><span>AQA · Year 10</span></div></div>
+    <nav id="nav">
+      <button class="nav-item active" data-view="dashboard">⌂ <span>Dashboard</span></button>
+      <button class="nav-item" data-view="subjects">▦ <span>Subjects</span></button>
+      <button class="nav-item" data-view="planner">◷ <span>Revision planner</span></button>
+      <button class="nav-item" data-view="quiz">✦ <span>Quick quiz</span></button>
+      <button class="nav-item" data-view="papers">▤ <span>Exam papers</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="nav-item" id="darkBtn">☾ <span>Dark mode</span></button>
+      <small>Progress is saved on this device.</small>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+      <div class="search"><span>⌕</span><input id="search" placeholder="Search topics, resources or subjects…"></div>
+      <button class="icon-btn" id="resetBtn" title="Reset progress">↻</button>
+    </header>
+
+    <section id="dashboard" class="view active">
+      <div class="hero">
+        <div><p class="eyebrow">YEAR 10 · GCSE</p><h1>Make revision<br><em>count.</em></h1>
+        <p class="hero-copy">Your AQA revision command centre. Work through topics, practise exam questions and build momentum.</p>
+        <button class="primary" data-view="subjects">Start revising →</button></div>
+        <div class="hero-orbit"><div class="orbit-ring"></div><div class="hero-number">10<span>%</span></div><small>of your plan complete</small></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>Topics completed</span><strong id="topicsDone">0 / 42</strong><div class="bar"><i id="progressBar"></i></div></div>
+        <div class="stat"><span>Current streak</span><strong id="streak">0 days 🔥</strong><small>Mark a topic complete each day.</small></div>
+        <div class="stat"><span>Quiz score</span><strong id="quizScore">0%</strong><small>Best score across your quizzes.</small></div>
+      </div>
+      <div class="section-head"><div><p class="eyebrow">YOUR SUBJECTS</p><h2>Pick a subject</h2></div><button class="text-btn" data-view="subjects">View all →</button></div>
+      <div class="subject-grid" id="dashboardSubjects"></div>
+      <div class="tip"><span>⚡</span><div><strong>Revision rule</strong><p>Don't just reread. Retrieve, practise, mark, then fix the gaps.</p></div></div>
+    </section>
+
+    <section id="subjects" class="view">
+      <div class="page-head"><p class="eyebrow">AQA · YEAR 10</p><h1>Subjects</h1><p>Choose a subject and work through its core Year 10 topics.</p></div>
+      <div class="filters" id="subjectFilters"></div>
+      <div class="subject-grid full" id="allSubjects"></div>
+    </section>
+
+    <section id="subjectDetail" class="view">
+      <button class="back" id="backSubjects">← All subjects</button>
+      <div id="detailContent"></div>
+    </section>
+
+    <section id="planner" class="view">
+      <div class="page-head"><p class="eyebrow">BUILD A ROUTINE</p><h1>Revision planner</h1><p>Small, repeatable sessions beat heroic cramming.</p></div>
+      <div class="planner-grid">
+        <div class="panel"><h3>Weekly focus</h3><div id="plannerList"></div></div>
+        <div class="panel"><h3>Session checklist</h3><label><input type="checkbox"> 5 min: recall what I already know</label><label><input type="checkbox"> 20 min: learn / retrieve</label><label><input type="checkbox"> 20 min: exam questions</label><label><input type="checkbox"> 10 min: mark and correct</label><label><input type="checkbox"> 5 min: write tomorrow's target</label></div>
+      </div>
+    </section>
+
+    <section id="quiz" class="view">
+      <div class="page-head"><p class="eyebrow">RETRIEVAL PRACTICE</p><h1>Quick quiz</h1><p>Test yourself. No notes. No excuses.</p></div>
+      <div class="quiz-wrap panel" id="quizBox"></div>
+    </section>
+
+    <section id="papers" class="view">
+      <div class="page-head"><p class="eyebrow">OFFICIAL RESOURCES</p><h1>Exam papers</h1><p>Use AQA's official finder for past papers, mark schemes and examiner reports.</p></div>
+      <div class="paper-grid">
+        <a class="paper-card" href="https://www.aqa.org.uk/past-papers-and-mark-schemes-finder" target="_blank" rel="noopener"><span>▤</span><div><strong>AQA Past Paper Finder</strong><p>Search by subject and exam series.</p></div><b>↗</b></a>
+        <a class="paper-card" href="https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300" target="_blank" rel="noopener"><span>∑</span><div><strong>AQA GCSE Maths</strong><p>Specification, assessment and resources.</p></div><b>↗</b></a>
+        <a class="paper-card" href="https://www.aqa.org.uk/subjects/english/gcse/english-language-8700" target="_blank" rel="noopener"><span>A</span><div><strong>AQA English Language</strong><p>Specification and assessment resources.</p></div><b>↗</b></a>
+        <a class="paper-card" href="https://www.aqa.org.uk/subjects/science/gcse" target="_blank" rel="noopener"><span>⚗</span><div><strong>AQA GCSE Science</strong><p>Combined and separate science routes.</p></div><b>↗</b></a>
+      </div>
+      <div class="notice">Past papers are linked to the official AQA site rather than copied into this website. This keeps the hub lightweight and respects AQA's copyright restrictions.</div>
+    </section>
+  </main>
+</div>
+<script src="app.js"></script>
+</body></html>
